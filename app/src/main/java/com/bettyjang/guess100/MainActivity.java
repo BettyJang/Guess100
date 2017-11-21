@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
+
     }
 
     private void findViews() {
@@ -33,13 +34,14 @@ public class MainActivity extends AppCompatActivity {
         edInfo = findViewById(R.id.info);
         edNumber = (EditText) findViewById(R.id.number);
         Button send = (Button) findViewById(R.id.send);
+        TextView rand = (TextView) findViewById(R.id.secret);
+        rand.setText(Integer.toString(ran));
     }
     public void Guess100 (View view){
        /* int ran = new Random().nextInt(100)+1;
         int max = 100;
         int min = 1;*/
-        TextView rand = (TextView) findViewById(R.id.secret);
-        rand.setText(Integer.toString(ran));
+
         EditText edNumber = (EditText) findViewById(R.id.number);
         int number = Integer.parseInt(edNumber.getText().toString());
         if (number < ran){
